@@ -1,0 +1,427 @@
+{
+  "seed": 20260922,
+  "sigma": 0.06,
+  "n_rep": 4,
+  "chi2_95_1df": 3.841,
+  "flat_spread_below": 0.5,
+  "rank_tol_relative": 1e-08,
+  "truth": {
+    "alpha": 0.62,
+    "beta": 1.15,
+    "gamma": 2.4
+  },
+  "design": {
+    "alpha": [
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.25
+    ],
+    "beta": [
+      1.8,
+      0.4,
+      1.8,
+      0.4,
+      1.2
+    ],
+    "gamma": [
+      0.3,
+      0.9,
+      0.3,
+      1.5,
+      0.6
+    ]
+  },
+  "design_energy": {
+    "alpha": 3.4375,
+    "beta": 8.24,
+    "gamma": 3.6
+  },
+  "information_diagonal": {
+    "alpha": 3819.4444,
+    "beta": 9155.5556,
+    "gamma": 4000.0
+  },
+  "cramer_rao_legal": {
+    "alpha": {
+      "se": 0.016180797,
+      "relative_se": 0.026098059
+    },
+    "beta": {
+      "se": 0.010450995,
+      "relative_se": 0.0090878219
+    },
+    "gamma": {
+      "se": 0.015811388,
+      "relative_se": 0.0065880785
+    }
+  },
+  "identify": {
+    "theta_hat": 1.3252986,
+    "weights": {
+      "alpha": 0.22500409,
+      "beta": 0.53935526,
+      "gamma": 0.23564065
+    },
+    "arithmetic_mean_of_coefficients": 1.39,
+    "abs_error": {
+      "alpha": 0.70529864,
+      "beta": 0.17529864,
+      "gamma": 1.0747014
+    },
+    "delta_chi2_at_truth": {
+      "alpha": 8444.1488,
+      "beta": 521.63519,
+      "gamma": 19605.837
+    },
+    "information": 16975.0
+  },
+  "product": {
+    "pi": 1.488,
+    "eigenvalues": [
+      20967.765,
+      0.0
+    ],
+    "rank": 1,
+    "null_cosine_with_alpha_neg_gamma": 1.0
+  },
+  "noisy": {
+    "identify_theta_hat": 1.3251212,
+    "alpha_hat": 0.63229817
+  },
+  "validator": {
+    "legal_bundle": {
+      "rules_failed": [],
+      "accepted": true,
+      "schema_valid": true
+    },
+    "legal_singletons": {
+      "rules_failed": [],
+      "accepted": true,
+      "schema_valid": true
+    },
+    "legal_binary": {
+      "rules_failed": [],
+      "accepted": true,
+      "schema_valid": true
+    },
+    "illegal_identify": {
+      "rules_failed": [
+        "symbol_unique",
+        "map_coefficient_unique",
+        "channel_parameter_status",
+        "theta_not_empty",
+        "operator_not_disjoint_union",
+        "quotient_not_null",
+        "combiner_not_null",
+        "missing_non_parameter:merged_therapeutic_theta",
+        "merged_claim_not_refused",
+        "candidate_admitted_without_falsifier",
+        "hypothesis_parameter_status"
+      ],
+      "accepted": false,
+      "schema_valid": false
+    },
+    "illegal_product": {
+      "rules_failed": [
+        "theta_not_empty",
+        "operator_not_disjoint_union",
+        "quotient_not_null",
+        "combiner_not_null",
+        "missing_non_parameter:product_of_map_coefficients",
+        "merged_claim_not_refused",
+        "candidate_admitted_without_falsifier",
+        "hypothesis_parameter_status"
+      ],
+      "accepted": false,
+      "schema_valid": false
+    },
+    "illegal_mean": {
+      "rules_failed": [
+        "theta_not_empty",
+        "operator_not_disjoint_union",
+        "quotient_not_null",
+        "combiner_not_null",
+        "missing_non_parameter:arithmetic_mean_of_channels",
+        "merged_claim_not_refused",
+        "candidate_admitted_without_falsifier",
+        "hypothesis_parameter_status"
+      ],
+      "accepted": false,
+      "schema_valid": false
+    },
+    "illegal_promote": {
+      "rules_failed": [
+        "channel_parameter_status",
+        "theta_not_empty",
+        "missing_non_parameter:channel_promoted_into_theta",
+        "merged_claim_not_refused",
+        "candidate_admitted_without_falsifier",
+        "hypothesis_parameter_status"
+      ],
+      "accepted": false,
+      "schema_valid": false
+    },
+    "illegal_self": {
+      "rules_failed": [
+        "channel_id_unique",
+        "symbol_unique",
+        "map_coefficient_unique",
+        "factor_partition",
+        "missing_non_parameter:self_composition"
+      ],
+      "accepted": false,
+      "schema_valid": true
+    },
+    "illegal_cross": {
+      "rules_failed": [
+        "disease_mismatch",
+        "missing_non_parameter:cross_disease_join"
+      ],
+      "accepted": false,
+      "schema_valid": true
+    }
+  },
+  "fake_doi_rules_failed": [
+    "doi_not_in_snapshot"
+  ],
+  "algebra": {
+    "bundle_equals_singletons": true,
+    "associative_channel_sets": true,
+    "commutative_binary": true,
+    "binary_is_subset": true,
+    "rank_adds": true,
+    "binary_rank_adds": true,
+    "identify_rank": 1,
+    "product_rank": 1,
+    "product_null_cosine": 1.0,
+    "off_diagonal_max": 0.0
+  },
+  "spectra": [
+    {
+      "name": "legal_joint",
+      "n_param": 3,
+      "eigenvalues": [
+        9155.5556,
+        4000.0,
+        3819.4444
+      ],
+      "rank": 3
+    },
+    {
+      "name": "amyl_only",
+      "n_param": 3,
+      "eigenvalues": [
+        3819.4444,
+        0.0,
+        0.0
+      ],
+      "rank": 1
+    },
+    {
+      "name": "spectral_only",
+      "n_param": 3,
+      "eigenvalues": [
+        9155.5556,
+        0.0,
+        0.0
+      ],
+      "rank": 1
+    },
+    {
+      "name": "compartment_only",
+      "n_param": 3,
+      "eigenvalues": [
+        4000.0,
+        0.0,
+        0.0
+      ],
+      "rank": 1
+    },
+    {
+      "name": "binary_spectral_compartment",
+      "n_param": 3,
+      "eigenvalues": [
+        9155.5556,
+        4000.0,
+        0.0
+      ],
+      "rank": 2
+    },
+    {
+      "name": "illegal_identify",
+      "n_param": 1,
+      "eigenvalues": [
+        16975.0
+      ],
+      "rank": 1
+    },
+    {
+      "name": "product_alpha_gamma",
+      "n_param": 2,
+      "eigenvalues": [
+        20967.765,
+        0.0
+      ],
+      "rank": 1
+    }
+  ],
+  "profiles": {
+    "alpha": {
+      "name": "alpha",
+      "call": "closed",
+      "spread": 3303.4375,
+      "center": 0.62,
+      "endpoint_grid": [
+        0.248,
+        1.55
+      ],
+      "endpoint_delta_chi2": [
+        528.55,
+        3303.4375
+      ],
+      "argmin": 0.62,
+      "min_delta_chi2": 0.0
+    },
+    "beta": {
+      "name": "beta",
+      "call": "closed",
+      "spread": 27243.5,
+      "center": 1.15,
+      "endpoint_grid": [
+        0.46,
+        2.875
+      ],
+      "endpoint_delta_chi2": [
+        4358.96,
+        27243.5
+      ],
+      "argmin": 1.15,
+      "min_delta_chi2": 0.0
+    },
+    "gamma": {
+      "name": "gamma",
+      "call": "closed",
+      "spread": 51840.0,
+      "center": 2.4,
+      "endpoint_grid": [
+        0.96,
+        6.0
+      ],
+      "endpoint_delta_chi2": [
+        8294.4,
+        51840.0
+      ],
+      "argmin": 2.4,
+      "min_delta_chi2": 0.0
+    },
+    "spectral_only_alpha": {
+      "name": "spectral_only_alpha",
+      "call": "flat",
+      "spread": 0.0,
+      "center": 0.62,
+      "endpoint_grid": [
+        0.248,
+        1.55
+      ],
+      "endpoint_delta_chi2": [
+        0.0,
+        0.0
+      ],
+      "argmin": 0.248,
+      "min_delta_chi2": 0.0
+    },
+    "amyl_only_gamma": {
+      "name": "amyl_only_gamma",
+      "call": "flat",
+      "spread": 0.0,
+      "center": 2.4,
+      "endpoint_grid": [
+        0.96,
+        6.0
+      ],
+      "endpoint_delta_chi2": [
+        0.0,
+        0.0
+      ],
+      "argmin": 0.96,
+      "min_delta_chi2": 0.0
+    },
+    "product_alpha": {
+      "name": "product_alpha",
+      "call": "flat",
+      "spread": 0.0,
+      "center": 0.62,
+      "endpoint_grid": [
+        0.248,
+        1.55
+      ],
+      "endpoint_delta_chi2": [
+        0.0,
+        0.0
+      ],
+      "argmin": 0.248,
+      "min_delta_chi2": 0.0
+    },
+    "product_slice_alpha": {
+      "name": "product_slice_alpha",
+      "call": "closed",
+      "spread": 17000.474,
+      "center": 0.62,
+      "endpoint_grid": [
+        0.248,
+        1.55
+      ],
+      "endpoint_delta_chi2": [
+        2720.0759,
+        17000.474
+      ],
+      "argmin": 0.62,
+      "min_delta_chi2": 0.0
+    },
+    "illegal_theta": {
+      "name": "illegal_theta",
+      "call": "closed",
+      "spread": 67084.132,
+      "center": 1.3252986,
+      "endpoint_grid": [
+        0.53011946,
+        3.3132466
+      ],
+      "endpoint_delta_chi2": [
+        10733.461,
+        67084.132
+      ],
+      "argmin": 1.3252986,
+      "min_delta_chi2": 0.0
+    },
+    "alpha_noisy": {
+      "name": "alpha_noisy",
+      "call": "closed",
+      "spread": 3216.0692,
+      "center": 0.63229817,
+      "endpoint_grid": [
+        0.248,
+        1.55
+      ],
+      "endpoint_delta_chi2": [
+        564.07497,
+        3216.6469
+      ],
+      "argmin": 0.62,
+      "min_delta_chi2": 0.57767186
+    }
+  },
+  "profile_doi_count": 8,
+  "checks": {
+    "legal_accepted": true,
+    "illegal_refused": true,
+    "schema_refuses_quotient_files": true,
+    "schema_misses_self_and_cross": true,
+    "fake_doi_refused": true,
+    "algebra": true,
+    "product_kernel": true,
+    "profiles": true
+  }
+}
