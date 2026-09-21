@@ -1,0 +1,184 @@
+schema_version: 1.2.0-compose
+profile_id: dp-compose-illegal-promote-001
+extends:
+  object: DiseaseProfile
+  schema_version: 1.0.0
+  source: 'Thesis #3 Disease Profile contract, local composition extension 1.2.0-compose.
+    Does not edit schema 1.1.0-multiobs.'
+disease_id: named-channel-class-unspecified
+disease_label: Unspecified class used to test composition of named maps. Not a patient
+  and not a stage.
+created_at: '2026-09-21T00:00:00Z'
+asker_role: methods_researcher
+answers:
+- id: Q1
+  question: Who is asking?
+  label: A methods researcher asking when named observation channels may be joined.
+- id: Q2
+  question: Which disease, not a generic slogan?
+  label: An unspecified class of named observation channels. No person and no stage.
+- id: Q3
+  question: What is the current regime?
+  label: An in-silico join of declared maps. No clinical regime is asserted.
+- id: Q4
+  question: Where is the system stuck?
+  label: The portfolio has a profile object, one named channel, and one multi-channel
+    file. It does not yet say which joins preserve that file as a profile.
+observables:
+- id: obs-map-not-parameter
+  statement: A named observation channel is a map. Its coefficient is not a member
+    of a therapeutic parameter list unless a separate identification argument says
+    so.
+  citation_ids:
+  - cit-bellman-1970
+  - cit-t08
+- id: obs-profile-object
+  statement: A Disease Profile is a versioned research export. It is not a chart and
+    not a parameter table.
+  citation_ids:
+  - cit-t03
+  - cit-wilkinson-2016
+- id: obs-fusion-is-not-join
+  statement: Pooling readings under one symbol answers a different question from keeping
+    the readings as separate maps.
+  citation_ids:
+  - cit-bareinboim-2016
+  - cit-bloch-1996
+  - cit-t15
+observation_channels:
+- channel_id: ch_amyl_map
+  name: Amylase-shaped observation map
+  symbol: y_A
+  map_coefficient: alpha
+  observes: A declared saturating function of a substrate coordinate. The coefficient
+    is not an inhibition percentage and not an IC50.
+  parameter_status: in_theta
+  factor_id: f_amyl
+  source_prior: T08
+  refusal: Removed. Joining promoted this map into theta.
+- channel_id: ch_spectral
+  name: Spectral-contrast map
+  symbol: y_S
+  map_coefficient: beta
+  observes: A declared spectral contrast. Not a copy of a published reporter loading.
+  parameter_status: not_in_theta
+  factor_id: f_t15_pair
+  source_prior: T15
+  refusal: The spectral coefficient is not a killing coefficient and is not renamed
+    when a second channel is attached.
+- channel_id: ch_compartment
+  name: Compartment-indicator map
+  symbol: y_C
+  map_coefficient: gamma
+  observes: A declared compartment indicator. Not a vesicle count and not a delivery
+    rate.
+  parameter_status: not_in_theta
+  factor_id: f_t15_pair
+  source_prior: T15
+  refusal: The compartment coefficient stays a map coefficient. Tropism language does
+    not become a rate inside theta.
+composition:
+  operator: disjoint_union
+  quotient: null
+  combiner: null
+  factors:
+  - factor_id: f_amyl
+    source_prior: T08
+    disease_id: named-channel-class-unspecified
+    channel_ids:
+    - ch_amyl_map
+  - factor_id: f_t15_pair
+    source_prior: T15
+    disease_id: named-channel-class-unspecified
+    channel_ids:
+    - ch_spectral
+    - ch_compartment
+candidate_mechanisms:
+- id: M-DISJOINT
+  statement: The composed object keeps one symbol and one map coefficient for each
+    named channel.
+  evidence_class: definition
+  falsifier: A preparation series whose loadings differ, fitted anyway by one shared
+    coefficient.
+  status: admitted
+- id: M-ONE-THETA
+  statement: One therapeutic parameter accounts for every channel in the join.
+  evidence_class: knowledge
+  falsifier: ''
+  status: admitted
+  refusal_rule: ''
+non_parameters:
+- id: merged_therapeutic_theta
+  statement: One symbol used as every channel's map coefficient and entered as a therapeutic
+    parameter.
+- id: composition_quotient
+  statement: A join that identifies distinct map coefficients.
+- id: product_of_map_coefficients
+  statement: A product of two map coefficients written as one parameter.
+- id: arithmetic_mean_of_channels
+  statement: An arithmetic mean of channel readouts written as one parameter.
+- id: cross_disease_join
+  statement: A disjoint union across two disease-class identifiers.
+- id: self_composition
+  statement: A channel joined to a second copy of the same channel identifier.
+- id: assay_scalar_as_treatment
+  statement: An assay-shaped map coefficient copied in as a treatment parameter. No
+    assay table is stored here.
+theta:
+- alpha
+admitted_hypotheses:
+- id: H-JOIN-001
+  statement: Attaching the amylase-shaped map to the other channels writes alpha into
+    theta.
+  falsifier: Any composed file with a non-empty theta list, a quotient, a combiner,
+    a repeated channel identifier, or two disease-class identifiers.
+  parameter_status: entered_theta
+citations:
+- id: cit-raue-2009
+  vancouver: Raue A, Kreutz C, Maiwald T, Bachmann J, Schilling M, Klingmüller U,
+    et al. Structural and practical identifiability analysis of partially observed
+    dynamical models by exploiting the profile likelihood. Bioinformatics. 2009;25(15):1923-1929.
+  doi: 10.1093/bioinformatics/btp358
+- id: cit-bareinboim-2016
+  vancouver: Bareinboim E, Pearl J. Causal inference and the data-fusion problem.
+    Proc Natl Acad Sci U S A. 2016;113(27):7345-7352.
+  doi: 10.1073/pnas.1510507113
+- id: cit-wilkinson-2016
+  vancouver: Wilkinson MD, Dumontier M, Aalbersberg IJ, Appleton G, Axton M, Baak
+    A, et al. The FAIR Guiding Principles for scientific data management and stewardship.
+    Sci Data. 2016;3:160018.
+  doi: 10.1038/sdata.2016.18
+- id: cit-bellman-1970
+  vancouver: Bellman R, Åström KJ. On structural identifiability. Math Biosci. 1970;7(3-4):329-339.
+  doi: 10.1016/0025-5564(70)90132-x
+- id: cit-bloch-1996
+  vancouver: 'Bloch I. Information combination operators for data fusion: a comparative
+    review with classification. IEEE Trans Syst Man Cybern A. 1996;26(1):52-67.'
+  doi: 10.1109/3468.477860
+- id: cit-eisenberg-2014
+  vancouver: Eisenberg MC, Hayashi MAL. Determining identifiable parameter combinations
+    using subset profiling. Math Biosci. 2014;256:116-126.
+  doi: 10.1016/j.mbs.2014.08.008
+- id: cit-fisher-1922
+  vancouver: Fisher RA. On the mathematical foundations of theoretical statistics.
+    Philos Trans R Soc Lond A. 1922;222:309-368.
+  doi: 10.1098/rsta.1922.0009
+- id: cit-rao-1992
+  vancouver: 'Rao CR. Information and the accuracy attainable in the estimation of
+    statistical parameters. In: Breakthroughs in statistics. Springer Series in Statistics.
+    1992.'
+  doi: 10.1007/978-1-4612-0919-5_16
+- id: cit-t03
+  vancouver: 'Ogbonna KE. Disease profiles for complex pathologies: a gated method
+    for systemic personalized-medicine research objects [Internet]. Thesis #3. 2026
+    [cited 2026 Sep 21]. Available from: https://github.com/cloudynirvana/thesis-03-disease-profile'
+- id: cit-t08
+  vancouver: 'Ogbonna KE. Green-synthesized silver nanoparticles from Carica papaya
+    as an in-vitro metabolic observation channel [Internet]. Thesis #8. 2026 [cited
+    2026 Sep 21]. Available from: https://github.com/cloudynirvana/thesis-08-papaya-agnp-observation-channel'
+- id: cit-t15
+  vancouver: 'Ogbonna KE. Encoding a compartmental AgNP-exosome-Raman theranostic
+    concept as a multi-observation Disease Profile research object [Internet]. Thesis
+    #15. 2026 [cited 2026 Sep 21]. Available from: https://github.com/cloudynirvana/thesis-15-nanobiocomposite-multiobservation-profile'
+disclaimer: Research object. Not a medical device, not clinical decision support,
+  not a diagnostic, not a dose, and not a cure. No document DOI.

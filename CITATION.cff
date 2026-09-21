@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you cite this computational research thesis, please use the metadata below. No DOI is minted here; do not invent one."
+type: thesis
+title: "Composing named observation channels into a Disease Profile without illegal merge into Θ"
+authors:
+  - family-names: Ogbonna
+    given-names: Kelechi Emeka
+    email: kelechiogbonna300@gmail.com
+    alias: cloudynirvana
+abstract: >-
+  When do separately named observation channels compose into a Disease
+  Profile without illegally merging into a single therapeutic parameter θ?
+  The legal operator is disjoint union of named maps. Identification, a
+  product, an arithmetic mean, promotion of one coefficient into θ, a
+  repeated channel identifier, and a cross-class join are refused. On a
+  five-preparation linear toy the joint Fisher rank is 3. The identified
+  symbol is a design-weighted average and matches none of the generating
+  coefficients. A product of two coefficients has a flat profile along the
+  hyperbola. Not a medical device. No assay table is copied. No document DOI.
+keywords:
+  - observation channel
+  - disease profile
+  - composition
+  - disjoint union
+  - profile likelihood
+  - Fisher information
+  - identifiability
+  - research-only
+license: MIT
+date-released: "2026-09-21"
+url: "https://github.com/cloudynirvana/thesis-22-observation-channel-profile-composition"
+repository-code: "https://github.com/cloudynirvana/thesis-22-observation-channel-profile-composition"
+preferred-citation:
+  type: thesis
+  title: "Composing named observation channels into a Disease Profile without illegal merge into Θ"
+  authors:
+    - family-names: Ogbonna
+      given-names: Kelechi Emeka
+  year: 2026
+  month: 9
+  url: "https://github.com/cloudynirvana/thesis-22-observation-channel-profile-composition"
+  notes: "Thesis #22. Depends on T03, T08, and T15. Computational research. No document DOI."
